@@ -17,7 +17,10 @@ module.exports = {
           "03": "#A3A3A3",
           "04": "#F8F7F1",
         }
-      }
+      },
+      fontFamily: {
+        inter: ["'Inter'", "sans-serif"],
+      },
     },
   },
   plugins: [],
