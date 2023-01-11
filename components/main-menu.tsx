@@ -10,6 +10,7 @@ import SettingMenuIcon from './svg/setting-menu-icon';
 import PaymentMenuIcon from './svg/payment-menu-icon';
 import TransactionMenuIcon from './svg/transaction-menu-icon';
 import CarReportIcon from './svg/report-menu-icon';
+import LogoutIcon from './svg/logout-icon';
 
 const menus = [
     {
@@ -61,42 +62,51 @@ const MainMenu = () => {
     return (
         <div className="flex flex-col justify-between flex-none p-6 text-white bg-black w-60">
             <div className="flex flex-col space-y-5">
+                {/* Logo */}
                 <div>
-                    <Link href='/' className="block px-2 py-6">
+                    <Link href="/" className="block px-2 py-6">
                         <Logo />
                     </Link>
                 </div>
 
-                <div className='flex flex-col space-y-4'>
-                    <ul className='flex flex-col space-y-2'>
-                        {menus.map((menu, index) =>
+                <div className="flex flex-col space-y-4">
+                    <ul className="flex flex-col space-y-2">
+                        {menus.map((menu, index) => (
                             <MenuItem
                                 key={index}
                                 title={menu.title}
                                 href={menu.href}
                                 icon={menu.icon}
                             />
-                        )}
+                        ))}
                     </ul>
 
-                    <hr className='my-2 ml-4' />
+                    <hr className="py-2 ml-4 text-white/20" />
+
                     <div>
+                        <p className="px-4 py-3 text-white/50">Report</p>
+
                         <ul>
-                            <p className='px-4 py-3 text-white/50'>Report</p>
-                            {reportMenus.map((menu, index) =>
+                            {reportMenus.map((menu, index) => (
                                 <MenuItem
                                     key={index}
                                     title={menu.title}
                                     href={menu.href}
                                     icon={menu.icon}
                                 />
-                            )}
+                            ))}
                         </ul>
                     </div>
                 </div>
             </div>
+
             <div>
-                <button className="w-full px-4 py-3 text-center h3">Logout</button>
+                <button className="flex items-center justify-center w-full px-4 py-3 rounded-lg h3 bg-white/20">
+                    <div className="mr-3">
+                        <LogoutIcon />
+                    </div>
+                    Logout
+                </button>
             </div>
         </div>
     );

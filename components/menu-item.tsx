@@ -13,7 +13,9 @@ const MenuItem = (props: Menu) => {
 
     return (
         <li>
-            <Link href={props.href} className={`relative flex px-4 py-3 rounded ${router.route == props.href ? 'bg-primary button-text' : "hover:bg-primary opacity-75"}`}
+            <Link
+                href={props.href}
+                className={`relative flex px-4 py-3 rounded ${router.route == props.href ? "bg-primary button-text" : "hover:bg-primary opacity-75"}`}
             >
                 {router.route == props.href && (
                     <span className="absolute left-0 top-1/2 h-9 w-[6px] -translate-y-1/2 rounded bg-white">
@@ -22,7 +24,7 @@ const MenuItem = (props: Menu) => {
                 <props.icon className="mr-3" />
                 {props.title}
             </Link>
-        </li >
+        </li>
     );
 };
 
